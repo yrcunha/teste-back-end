@@ -18,5 +18,7 @@ Para iniciar o teste, faça um fork deste repositório.
 Utilizar um banco de dados Cloud para facilitar nossos teste.
 Caso não conheça nenhum segue uma indicação https://mlab.com/
 
+* **Importante:** Usamos o mesmo teste para todos os níveis de front: **júnior**, **pleno** ou **sênior**, mas procuramos adequar nossa exigência na avaliação com cada um desses níveis sem, por exemplo, exigir excelência de quem está começando :-)
+
 
 **Boa sorte!**
