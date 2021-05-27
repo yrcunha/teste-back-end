@@ -6,16 +6,26 @@
 	"author": "yrcunha <yrcunha@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+		"dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+		"migrate:created": "typeorm migration:create -n",
+		"migrate:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
+		"migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
 	},
 	"dependencies": {
+		"bcryptjs": "^2.4.3",
 		"express": "^4.17.1",
+		"pg": "^8.6.0",
+		"reflect-metadata": "^0.1.10",
+		"typeorm": "0.2.32",
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
+		"@types/bcryptjs": "^2.4.2",
 		"@types/express": "^4.17.12",
+		"@types/node": "^8.0.29",
 		"@types/uuid": "^8.3.0",
+		"ts-node": "3.3.0",
 		"ts-node-dev": "^1.1.6",
-		"typescript": "^4.3.2"
+		"typescript": "3.3.3333"
 	}
 }
