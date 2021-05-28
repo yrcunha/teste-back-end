@@ -1,0 +1,146 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "teste-back-end Documentation",
+		"description": "Se trata de uma aplicação simples, no qual o cliente irá criar um checklist do candidato de uma seleção, será incluído o nome ou nickname do candidato (chamado de user), após a criação do checklist será possível informar se o candidato possui as habilidades em javascript, typescrit, typeorm, swagger e collection Postman alterando o status de false para true.",
+		"version": "1.0.0",
+		"contact": {
+			"name": "Yuri Guimarães Rodrigues da Cunha",
+			"email": "yrcunha@gmail.com"
+		}
+	},
+	"paths": {
+		"/": {
+			"get": {
+				"tags": ["Chacklist"],
+				"summary": "Chacklist",
+				"description": "Está rota lista todos os checklists criados",
+				"responses": {
+					"200": {
+						"description": "Sucesso ao listar todos os Chacklist!",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"properties": {
+										"id": { "type": "string" },
+										"title": { "type": "string" },
+										"description": { "type": "string" },
+										"user": { "type": "string" },
+										"javastcript": { "type": "boolean" },
+										"typescript": { "type": "boolean" },
+										"typeorm": { "type": "boolean" },
+										"swagger": { "type": "boolean" },
+										"colletcitonPostman": { "type": "boolean" },
+										"created_at": { "type": "date" },
+										"updated_at": { "type": "date" }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/criar": {
+			"post": {
+				"tags": ["Chacklist"],
+				"summary": "Create a checklist",
+				"description": "Está rota cria um checklist para o candidato, devendo preencher o name ou nickname do user, lembrando que só poderá haver um user.",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"user": { "type": "string" }
+								},
+								"example": {
+									"user": "ycunha"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Checklist cadastrado com sucesso!"
+					},
+					"400": {
+						"description": "Já existe Checklist para o candidato! Lembre que só é permite um Checklist por candidato"
+					}
+				}
+			}
+		},
+		"/editar": {
+			"put": {
+				"tags": ["Chacklist"],
+				"summary": "Edit a checklist",
+				"description": "Está rota altera o status das habilidades do candidato no checklist, ao colocar como true significa que o candidato possui aquela habilidade.",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"user": { "type": "string" },
+									"javastcript": { "type": "boolean" },
+									"typescript": { "type": "boolean" },
+									"typeorm": { "type": "boolean" },
+									"swagger": { "type": "boolean" },
+									"colletcitonPostman": { "type": "boolean" }
+								},
+								"example": {
+									"user": "ycunha",
+									"javastcript": "true",
+									"typescript": "true",
+									"typeorm": "true",
+									"swagger": "true",
+									"colletcitonPostman": "true"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Checklist atualizado com sucesso!"
+					},
+					"500": {
+						"description": "Não existe Checklist para o candidato!"
+					}
+				}
+			}
+		},
+		"/excluir": {
+			"delete": {
+				"tags": ["Chacklist"],
+				"summary": "Create a checklist",
+				"description": "Está roca excluí um checklist, devendo informar o nome do candidato ou nickname pelo body",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"user": { "type": "string" }
+								},
+								"example": {
+									"user": "ycunha"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Checklist deletado com sucesso!"
+					},
+					"400": {
+						"description": "Não existe Checklist para o candidato!"
+					}
+				}
+			}
+		}
+	}
+}

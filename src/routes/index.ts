@@ -12,7 +12,7 @@ const AppRoutes = [
 		action: checklistController.getAll,
 	},
 	{
-		path: '/',
+		path: '/criar',
 		method: 'post',
 		action: checklistController.create,
 	},

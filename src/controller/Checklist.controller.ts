@@ -22,13 +22,13 @@ class ChecklistController {
 		if (userAlreadyExists) {
 			response.status(400).send({
 				message:
-					'Já existe Checklist para o Usuário! Lembre que só é permite um Checklist por Usuário',
+					'Já existe Checklist para o candidato! Lembre que só é permite um Checklist por candidato',
 			});
 		} else {
 			const checklist = checklistRepository.create({
 				title: 'Requisitos do teste',
 				description:
-					'Esse checklista é especifico para informar se o usuário preenche todos os requisitos',
+					'Esse checklista é especifico para informar se o candidato preenche todos os requisitos',
 				user,
 				javastcript: false,
 				typescript: false,
@@ -53,7 +53,7 @@ class ChecklistController {
 
 		if (!userAlreadyExists) {
 			response.status(400).send({
-				message: 'Não existe Checklist para o Usuário!',
+				message: 'Não existe Checklist para o candidato!',
 			});
 		} else {
 			checklistRepository.update(userAlreadyExists.id, {
@@ -78,7 +78,7 @@ class ChecklistController {
 
 		if (!userAlreadyExists) {
 			response.status(400).send({
-				message: 'Não existe Checklist para o Usuário!',
+				message: 'Não existe Checklist para o candidato!',
 			});
 		} else {
 			checklistRepository.delete(userAlreadyExists.id);

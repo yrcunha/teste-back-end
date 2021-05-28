@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "1cae8f7b-f870-4a46-b2c3-ae02f82d20b7",
+		"name": "teste-back-end",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "f81b7c24",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": \"ycunha\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3333"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3333"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "4fc7d68a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"ycunha\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/excluir",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3333",
+					"path": ["excluir"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"ycunha\",\r\n    \"javastcript\": true,\r\n    \"typescript\": true,\r\n    \"typeorm\": true,\r\n    \"swagger\": true,\r\n    \"colletcitonPostman\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/editar",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3333",
+					"path": ["editar"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Documentation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/api-docs",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3333",
+					"path": ["api-docs"]
+				}
+			},
+			"response": []
+		}
+	]
+}
