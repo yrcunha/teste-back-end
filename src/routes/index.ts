@@ -1,6 +1,6 @@
-import { UserController } from '../repositories/Users.repositories';
+import { ChecklistController } from '../controller/Checklist.controller';
 
-const userController = new UserController();
+const checklistController = new ChecklistController();
 
 /**
  * All application routes.
@@ -9,22 +9,23 @@ const AppRoutes = [
 	{
 		path: '/',
 		method: 'get',
-		action: userController.getAll,
+		action: checklistController.getAll,
 	},
 	{
-		path: '/register',
+		path: '/',
 		method: 'post',
-		action: userController.create,
+		action: checklistController.create,
 	},
 	{
 		path: '/editar',
 		method: 'put',
-		action: userController.create,
+		middleware: '',
+		action: checklistController.update,
 	},
 	{
-		path: '/deletar',
-		method: 'delet',
-		action: userController.create,
+		path: '/excluir',
+		method: 'delete',
+		action: checklistController.delete,
 	},
 ];
 

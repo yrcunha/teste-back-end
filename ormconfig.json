@@ -1,6 +1,6 @@
 {
 	"type": "postgres",
-	"url": "",
+	"url": "postgres://sxawrlte:m1FJv4zByWtqsh2WqEZyFOr49RwfsMyy@tuffi.db.elephantsql.com/sxawrlte",
 	"synchronize": true,
 	"logging": false,
 	"entities": ["src/entity/**/*.ts"],

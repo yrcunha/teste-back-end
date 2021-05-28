@@ -1,10 +1,10 @@
 import 'reflect-metadata';
 
 import dotenv from 'dotenv';
-import { Request, Response } from 'express';
 import express from 'express';
+import { Request, Response } from 'express';
 import { createConnection } from 'typeorm';
-import * as bodyParser from 'body-parser';
+
 import { AppRoutes } from './routes';
 
 dotenv.config();
@@ -12,7 +12,7 @@ dotenv.config();
 createConnection()
 	.then(() => {
 		const server = express();
-		server.use(bodyParser.json());
+		server.use(express.json());
 
 		AppRoutes.forEach((route) => {
 			server[route.method](
@@ -21,7 +21,7 @@ createConnection()
 					route
 						.action(request, response)
 						.then(() => next)
-						.catch((err) => next(err));
+						.catch((err: Error) => next(err));
 				}
 			);
 		});
