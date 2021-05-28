@@ -18,8 +18,9 @@ Para iniciar o teste, faça um fork deste repositório.
 
 4. Adicionar no seu readme.md o link da colletciton no postman
 
-> O link da colletciton no postman: https://www.getpostman.com/collections/a2faa7e91de7409b122c
-> Também foi disponibilizado o arquivo em JSON.
+> O link da colletciton no postman: https://www.getpostman.com/collections/a2faa7e91de7409b122c.
+
+> Também foi disponibilizado o arquivo em JSON na raiz do repositório.
 
 ## BANCO DE DADOS
 
